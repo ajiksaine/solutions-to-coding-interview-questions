@@ -22,6 +22,36 @@ def closestbrutforce(first_list, second_list, target):
 
     return closest
 
+def closest(first_list, second_list, target):
+    """
+    calculate the sum starting with the last index of the first array with the first index of the second array
+    if the sum is less than the target move down
+    if the sum is grater than the target move left
+    while comparing the previous closest sum to the current sum to determin the closest
+    """
+
+    closest = []
+
+    first_list.sort()
+    second_list.sort()
+
+    f_index = len(first_list)-1
+    s_index = 0
+    
+    while f_index >=0 and s_index <= len(second_list)-1:
+        sum = first_list[f_index] + second_list[s_index]
+        if len(closest) == 0 or abs(target-sum) < abs(target-closest[0]):
+            closest=[sum]
+        elif abs(target-sum) == abs(target-closest[0]):
+            closest.append(sum)
+
+        if  sum < target:
+            s_index += 1
+        else:
+            f_index -=1
+
+    return closest
+    
 
 # Get user input for the sorted array
 first_input_str = input("Enter a array of numbers, separated by spaces for the first list: ")
@@ -39,4 +69,4 @@ while True:
 
     key = int(target)
 
-    print(closestbrutforce(first_input_list,second_input_list,key))
+    print(closest(first_input_list,second_input_list,key))
