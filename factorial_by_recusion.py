@@ -5,7 +5,7 @@ def factorial(n):
     n! = n* (n-1) * (n-1) * n(n-3) ..... 3 * 2 * 1
     There for n! = n * (n-1)!
 
-    We know the factorial of = 1 which is our base case
+    We know the factorial of 0 = 1 which is our base case
 
     """
     if n == 0:
