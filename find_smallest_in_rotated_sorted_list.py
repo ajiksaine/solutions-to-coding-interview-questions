@@ -1,6 +1,11 @@
 def smallest(list,low,high):
     """
     Find the smallest in the list given a rotated sorted list
+
+    In a rotated sorted array, we know that the smallest value always after the higgest value in the list
+    otherwise, the list would alway be arranged in an increasing order.
+    We just need to find the number that has the number before it grater than it
+
     """
     if len(list) <= 0:
         return None
