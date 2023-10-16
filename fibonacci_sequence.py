@@ -1,6 +1,10 @@
 def sequence(num):
     """
     get the n number in the sequence
+
+    in the fibonacci sequence, we know that the first fibonacci number is 1 which is our base case
+
+    the fibonacci number in the sequence is derived by adding the two numbers before it.
     """
     if num < 0:
         raise ValueError("Invalid input")
