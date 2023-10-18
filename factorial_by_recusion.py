@@ -13,9 +13,13 @@ def factorial(n):
     else:
         return n * factorial(n-1)
     
+while True:
+    input_str = input("please enter a number or any character to quite:")
 
-numbers = [1,2,3,4,5,6]
+    if input_str.isalpha():
+        break
 
-for num in numbers:
+    num = int(input_str)
     result = factorial(num)
     print(str(num)+"! = " + str(result))
+    
